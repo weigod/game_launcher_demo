@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "baseUrl": ".",
+      "rootDir": ".",
+      "outDir": "dist",
+      "moduleResolution": "node",
+      "target": "esnext",
+      "module": "ES2015",
+      "lib": ["es6"],
+      "esModuleInterop": true,
+      "strictPropertyInitialization": false,
+      "strict": true,
+      "preserveSymlinks": true,
+      "declaration": true,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": false,
+      "typeRoots": ["node_modules/@types", "streamer/typings"],
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "noImplicitAny": true,
+      // "isolatedModules": true,
+      "noEmit": true,
+      "skipLibCheck": true
+    },
+    "include": ["streamer/**/*.ts", "streamer/**/*.tsx", "node_modules/@hyext/ext-sdk-hy/types.d.ts"],
+    "exclude": ["release/"]
+  }
+  

@@ -1,8 +1,0 @@
-node_modules
-dist
-release
-hyext_dist
-hyext_release
-.history
-.vscode
-publish
