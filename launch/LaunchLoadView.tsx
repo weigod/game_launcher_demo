@@ -5,14 +5,17 @@ import Launch, {ErrorType } from './Launch';
 import AlertDialog from "./component/dialog/AlertDialog"
 import TipDialog from './component/dialog/TipDialog'
 import { controlPanelVisible } from '../streamer/utils/controlPanelVisible';
+import { SendMessageToExe } from './stream';
 
 const { Progress } = UI
-const { Text, Image } = UI
+const { Text, Image, Button, Input} = UI
 
 interface state {
     progress: number,
     progressDisplay: string,
-    progressTip: string
+    progressTip: string,
+    inputText: string,
+    receiveMsg: string
 }
 export default class LaunchLoadView extends React.Component<any, state>{
 
@@ -21,7 +24,9 @@ export default class LaunchLoadView extends React.Component<any, state>{
         this.state = {
             progress: 0,
             progressDisplay: 'flex',
-            progressTip: '正在加载...'
+            progressTip: '正在加载...',
+            inputText: '',
+            receiveMsg: ''
         }
     }
 
@@ -48,12 +53,20 @@ export default class LaunchLoadView extends React.Component<any, state>{
                     })
                 }
             },
+            message: (info: {name: string, message: any}) => {
+                this.setState({receiveMsg: JSON.stringify(info)})     
+            },
             finish: () => {
                 // this.setState({ progressDisplay: 'none' })
                 this.setState({ progressTip: '启动成功 ' })
             }
         })
     }
+
+    onInputChange = (e:any) => {
+        this.setState({inputText: e})
+    }
+
     render() {
         return <View style={{
             width: '100%',
@@ -92,6 +105,27 @@ export default class LaunchLoadView extends React.Component<any, state>{
                     />
                 </View>
             }
+            <View style={{justifyContent: 'center', width: '100%', position: 'absolute', bottom: 100}}>
+                <View style={{flexDirection: 'row', width: '100%', justifyContent: 'center'}}>
+                    <Input
+                        style={{width: '60%', paddingLeft: 10}} 
+                        onChange={this.onInputChange}
+                        placeholder={"请输入消息内容"}
+                        placeholderTextColor="#AAAAAA"
+                        autoFocus={false}
+                        maxLength={30}
+                        editable={true}
+                        inputStyle={{fontSize: 12}}
+                        value={this.state.inputText}
+                        />
+                        <Button size='md' onPress={() => {
+                            SendMessageToExe(this.state.inputText)
+                        }}>
+                            <Text>发送</Text>
+                        </Button>
+                </View>
+                <Text style={{color: '#FFFFFF', paddingLeft: 20, paddingTop: 20}}>{`收到小程序传来的消息, 内容为: ${this.state.receiveMsg}`}</Text>
+            </View>
         </View>
     }
 }

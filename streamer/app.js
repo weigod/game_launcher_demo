@@ -5,6 +5,7 @@ import { controlPanelInVisible, controlPanelVisible } from './utils/controlPanel
 import Launch from '../launch/Launch'
 import LaunchLoadView from '../launch/LaunchLoadView'
 import { LogInfo } from '../launch/util/Log';
+import { offGameMessage } from '../launch/stream'
 import './app.hycss'
 
 const TAG = "app"
@@ -24,7 +25,7 @@ class App extends Component {
       gameConfigApi:this.gameConfigApi,
       exit:this.disposal,
       finish:()=>{
-        controlPanelInVisible()
+        // controlPanelInVisible()
       }
     });
 
@@ -44,6 +45,7 @@ class App extends Component {
   }
 
   async disposal() {
+    offGameMessage();
     hyExt.panel.disposal()
   }
 

@@ -126,8 +126,15 @@ function ShutdownGame(){
     return hyExt.exe.shutdownGame()
 }
 
-function SendMessageToLaunch(object){
-    return hyExt.exe.sendToGame({message: JSON.stringify(object)})
+function SendMessageToExe(params){
+    let req = {};
+    if (typeof params == "string") { 
+        req.message = params;
+    } else {
+        req.message = JSON.stringify(params);
+    }
+    LogInfo("req", JSON.stringify(req));
+    return hyExt.exe.sendToGame(req)
 }
 
 
@@ -135,8 +142,9 @@ export  {
     InitGameEnvInner,
     InitGameEnv,
     onGameMessage,
+    offGameMessage,
     removeLocalFunctionMessage,
     LaunchGame,
     ShutdownGame,
-    SendMessageToLaunch,
+    SendMessageToExe,
 }

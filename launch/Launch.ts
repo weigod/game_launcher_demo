@@ -32,6 +32,7 @@ class Launch {
     private errorCallback: Array<(type: ErrorType, res: number, msg: string) => void> = new Array;
     private finishCallback: Array<() => void> = new Array;
     private firstFrameCallback: Array<() => void> = new Array;
+    private messageCallback: Array<(info: {name: string, message: any}) => void> = new Array;
     private exitCallback: (() => void) | undefined;
     private appStartTime: number;
     private firstRefreshProgress = true;
@@ -45,13 +46,15 @@ class Launch {
         progress?: (progress: number) => void,
         error?: (type: ErrorType, res: number, msg: string) => void,
         finish?: () => void,
-        firstFrame?: () => void
+        firstFrame?: () => void,
+        message?: (info: {name: string, message: any}) => void,
         exit?: () => void,
     }): Promise<void> {
         req.progress && this.progressCallback.push(req.progress);
         req.error && this.errorCallback.push(req.error);
         req.finish && this.finishCallback.push(req.finish);
         req.firstFrame && this.firstFrameCallback.push(req.firstFrame);
+        req.message && this.messageCallback.push(req.message);
         this.gameConfigApi = req.gameConfigApi;
         this.exitCallback = req.exit;
         AppManager.gameId = Date.now();
@@ -63,12 +66,14 @@ class Launch {
         progress: (progress: number) => void,
         error: (type: ErrorType, res: number, msg: string) => void,
         finish: () => void,
-        firstFrame?: () => void
+        firstFrame?: () => void,
+        message?: (info: {name: string, message: any}) => void,
     }): void {
         req.progress && this.progressCallback.push(req.progress)
         req.finish && this.finishCallback.push(req.finish)
         req.error && this.errorCallback.push(req.error)
         req.firstFrame && this.firstFrameCallback.push(req.firstFrame)
+        req.message && this.messageCallback.push(req.message)
     }
 
     public start(req: {
@@ -169,6 +174,10 @@ class Launch {
     async listenerLocalMsg() {
         await onGameMessage(async ({name, message}) => {
             LogInfo(TAG, 'onGameMessage message:' + message, 'name:', name);
+            this.messageCallback && this.messageCallback.forEach(callback => {
+                callback({name, message})
+            })
+
             const eventName = name;
             const eventMessage = message;
             if (eventName === 'ExceptionEvent') {
