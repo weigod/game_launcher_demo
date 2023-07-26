@@ -3,7 +3,9 @@
 
 ## 1 Demo相关配置及发布
 ### Demo展示
-![示例图片](demo.jpg)
+![示例图片](image/demo.jpg)
+### 小程序版本配置勾选"自动发布OBS"即支持OBS环境
+![示例图片](image/obs.jpg)
 
 ### 1.1 根目录config.json中添加关键配置
 
