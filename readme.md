@@ -2,6 +2,8 @@
 
 
 ## 1 Demo相关配置及发布
+### Demo展示
+![示例图片](demo.jpg)
 
 ### 1.1 根目录config.json中添加关键配置
 
