@@ -52,9 +52,9 @@
 
 ### 2.2 前端接口主要的调用顺序和交互逻辑
 
-- 调用hyExt.exe.onGameMessage 以监听主播端或game的相关事件
-- 调用hyExt.exe.initGameEnv 初始化游戏环境
--  监听onGameMessage中name为GameEnvEvent的事件，message结构示例如下：
+- 1.先调用hyExt.exe.onGameMessage 以监听主播端或game的相关事件
+- 2.再调用hyExt.exe.initGameEnv 初始化游戏环境
+- 3.监听onGameMessage中name为GameEnvEvent的事件，message结构示例如下：
 
 ```js
 {"message":"{"msg":"success","progress":100,"res":0}","name":"GameEnvEvent"} 
