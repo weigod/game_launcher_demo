@@ -85,8 +85,8 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | name           | message 结构体                                 | 说明                                                         | 示例                                                         |
 | -------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | GameEnvEvent   | {msg: string , progress: number, res : number} | 环境初始化相关消息                                           | 见2.2示例                                                    |
-| ExceptionEvent | {hostCode: number, hostMessage: string}        | hostCode: 异常状态码  hostMessage: 异常消息， 表示环境准备异常或者游戏中途出现异常crash等 | {"hostCode":20013,"hostMessage":"game has been killed"}', name: 'ExceptionEvent'} |
-| GameMsg        | 定义格式和内容                                 | 由业务侧小程序与game exe间自定义的通信消息                   | {"message":"     {\"message\":\"GameExit\"}","name":"GameMsg"} |
+| ExceptionEvent | {hostCode: number, hostMessage: string}        | hostCode: 异常状态码  hostMessage: 异常消息， 表示环境准备异常或者游戏中途出现异常crash等 | {"hostCode":20013,"hostMessage":"game has been killed"} |
+| GameMsg        | 定义格式和内容                                 | 由业务侧小程序与game exe间自定义的通信消息                   |     {\"msg\":\"GameExit\"}或"some flat message" |
 | OperateLayerEvent | {type: number, name: string}        | type: 操作类型  name: 图层名称，主播端操作图层时的事件通知 | {"type":1,"name":"游戏图层名"} |
 | AnchorStatusEvent | {key: string, status: string}        | key: 主播端状态key  status: 主播端key对应所处状态 | {"key":"Live","status":"true"} |
 
@@ -95,14 +95,14 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 
 | 消息内容                            | hostCode | hostMessage                                                  |
 | ----------------------------------- | -------- | ------------------------------------------------------------ |
-| Game进程中途Crash异常退出通知      | 20002    | {"msg":"process exit unexpected"}                            |
-| 启动gameEnv进程失败通知           | 20007    | {"msg":"startup gameEnv failed"}                           |
-| gameEnv发来的异常通知             | 20008    | {"msg":"errcode: 100, errmsg: start game error"}            |
-| gameEnv进程中途Crash退出异常通知  | 20010    | {"msg":"gameEnv exit unexpected"}                          |
-| gameEnv进程中途被杀死退出异常通知 | 20011    | {"msg":"gameEnv has been killed"}                          |
-| 连接gameEnv进程IPC服务失败通知    | 20012    | {"msg":"connect gameEnv failed"}                           |
-| Game进程中途被杀死退出异常通知     | 20013    | {"msg":"game has been killed"}                              |
-| gameEnv进程启动后资源准备异常通知 | 20014    | {"msg":"gameEnv exit resource lack"}                       |
+| Game进程中途Crash异常退出通知      | 20002    | "process exit unexpected"                        |
+| 启动gameEnv进程失败通知           | 20007    | "startup gameEnv failed"                          |
+| gameEnv发来的异常通知             | 20008    | "start game error"                                |
+| gameEnv进程中途Crash退出异常通知  | 20010    | "gameEnv exit unexpected"                          |
+| gameEnv进程中途被杀死退出异常通知 | 20011    | "gameEnv has been killed"                           |
+| 连接gameEnv进程IPC服务失败通知    | 20012    | "connect gameEnv failed"                           |
+| Game进程中途被杀死退出异常通知     | 20013    | "game has been killed"                             |
+| gameEnv进程启动后资源准备异常通知 | 20014    | "gameEnv exit resource lack"                        |
 
 * `OperateLayerEvent` 消息中 type 取值：
 
