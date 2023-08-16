@@ -87,10 +87,11 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | GameEnvEvent   | {msg: string , progress: number, res : number} | 环境初始化相关消息                                           | 见2.2示例                                                    |
 | ExceptionEvent | {hostCode: number, hostMessage: string}        | hostCode: 异常状态码  hostMessage: 异常消息， 表示环境准备异常或者游戏中途出现异常crash等 | {"hostCode":20013,"hostMessage":"game has been killed"}', name: 'ExceptionEvent'} |
 | GameMsg        | 定义格式和内容                                 | 由业务侧小程序与game exe间自定义的通信消息                   | {"message":"     {\"message\":\"GameExit\"}","name":"GameMsg"} |
-| OperateLayerEvent | {type: number, name: string}        | type: 操作类型  name: 图层名称，主播端操作图层时的事件通知 | {"type":1,"name":"游戏图层名"}', name: 'OperateLayerEvent'} |
+| OperateLayerEvent | {type: number, name: string}        | type: 操作类型  name: 图层名称，主播端操作图层时的事件通知 | {"type":1,"name":"游戏图层名"} |
+| AnchorStatusEvent | {key: string, status: string}        | key: 主播端状态key  status: 主播端key对应所处状态 | {"key":"Live","status":"true"} |
 
-
-其中，`ExceptionEvent` 消息中 hostCode、hostMessage取值：
+具体各消息事件说明：
+* `ExceptionEvent` 消息中 hostCode、hostMessage取值：
 
 | 消息内容                            | hostCode | hostMessage                                                  |
 | ----------------------------------- | -------- | ------------------------------------------------------------ |
@@ -103,8 +104,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | Game进程中途被杀死退出异常通知     | 20013    | {"msg":"game has been killed"}                              |
 | gameEnv进程启动后资源准备异常通知 | 20014    | {"msg":"gameEnv exit resource lack"}                       |
 
-
-`OperateLayerEvent` 消息中 type 取值：
+* `OperateLayerEvent` 消息中 type 取值：
 
 | type | 类型描述 |
 | - | - |
@@ -117,3 +117,15 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | 6 | 被选 |
 | 7 | 失选 |
 | 8 | 编辑 |
+
+* `AnchorStatusEvent` 消息中 key 取值：
+
+| key | 说明 |
+| - | - |
+| LinkMic | 是否连麦 |
+| PK | 是否PK |
+| Live | 是否开播 |
+| PrivacyMode | 是否隐私模式 |
+
+status 表示对应key的状态结果(默认为true/false，部分key可能为其他值) |
+
