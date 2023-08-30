@@ -103,6 +103,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | 连接gameEnv进程IPC服务失败通知    | 20012    | "connect gameEnv failed"                           |
 | Game进程中途被杀死退出异常通知     | 20013    | "game has been killed"                             |
 | gameEnv进程启动后资源准备异常通知 | 20014    | "gameEnv exit resource lack"                        |
+| gameEnv进程云信令异常通知 | 20015    | "game env exception"                        |
 
 * `OperateLayerEvent` 消息中 type 取值：
 
