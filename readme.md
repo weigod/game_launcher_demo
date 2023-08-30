@@ -57,7 +57,7 @@
 - 3.监听onGameMessage中name为GameEnvEvent的事件，message结构示例如下：
 
 ```js
-{"message":"{"msg":"success","progress":100,"res":0}","name":"GameEnvEvent"} 
+{"msg":"success","progress":100,"res":0} 
 ```
 
 其中message的结构为：
