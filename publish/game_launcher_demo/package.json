@@ -1,0 +1,33 @@
+{
+  "name": "game_launcher_demo",
+  "version": "1.0.0",
+  "description": "通用游戏启动小程序",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx hyext start",
+    "release": "npx hyext release",
+    "config": "npx hyext config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weigod/game_launcher_demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@hyext/builder-beyond": "3.1.1",
+    "@hyext/cli": "3.4.8",
+    "@types/react": "18.0.12",
+    "@types/react-native": "0.67.7",
+    "typescript": "4.6.4"
+  },
+  "dependencies": {
+    "@hyext-beyond/core": "2.0.6",
+    "@hyext/ext-sdk-hy": "3.11.2-beta.6",
+    "@hyext/hy-ui": "1.3.39",
+    "@zs/sdk": "^2.0.63",
+    "compare-versions": "^6.0.0"
+  }
+}

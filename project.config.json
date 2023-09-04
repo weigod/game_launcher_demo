@@ -33,7 +33,7 @@
       },
       "useTaf": true,
       "https": true,
-      "host": "172.21.17.10",
+      "host": "172.21.17.113",
       "useCssLoader": true,
       "port": 18080,
       "enableLint": {
