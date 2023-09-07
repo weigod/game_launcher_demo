@@ -104,6 +104,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | Game进程中途被杀死退出异常通知     | 20013    | "game has been killed"                             |
 | gameEnv进程启动后资源准备异常通知 | 20014    | "gameEnv exit resource lack"                        |
 | gameEnv进程环境异常通知 | 20015    | "game env exception"                        |
+| gameEnv进程云游戏环境Alive通知 | 20016    | "game env exception"                        |
 
 * `OperateLayerEvent` 消息中 type 取值：
 
