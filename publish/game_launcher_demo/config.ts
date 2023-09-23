@@ -4,12 +4,12 @@ var config = {
     "game_name":"游戏Demo",
 	
     //可以不填，会请求业务后台获取连接，如果填啦，则使用这个url
-    "game_url":"https://g1c972e2182629c7-59ku7pqm.hyext.com/extResource/GameDemo.zip",
+    "game_url":"https://g1c972e2182629c7-59ku7pqm.hyext.com/extResource/gamedemo.zip",
 	
     //如果填写了url,这个md5必须填写,这个是game包的md5
-    "game_md5":"f5fc57a45bdb293d2e298de50022bc2e",
+    "game_md5":"66c3c3037a611dd82859326af19e904e",
 	
     //game的可执行程序名称，填写了url,这个也要填
-    "game_exe_name":"GameDemo.exe"
+    "game_exe_name":"gamedemo.exe"
 }
 export default config
