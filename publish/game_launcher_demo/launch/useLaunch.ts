@@ -235,22 +235,28 @@ export const useReceiveMsg = () => {
     React.useEffect(() => {
         const handler = notice => {
             LogInfo('notice:', notice);
+            setReceiveMsg(JSON.stringify(notice));
             const { name, message } = notice;
-            const messageJson = JSON.parse(message);
             if (name === 'GameEnvEvent') {
+                const messageJson = JSON.parse(message);
                 if (messageJson['res'] === 0 && messageJson['progress'] === 100) {
                     // 隐藏小程序窗口
                     controlPanelInVisible();
                 }
             }
             if (name === 'GameMsg') {
-                if (messageJson['message'] === 'GameExit') {
-                    hyExt.panel.disposal();
-                } 
+                try {
+                    const messageJson = JSON.parse(message);
+                    if (messageJson['message'] === 'GameExit') {
+                        hyExt.panel.disposal();
+                    } 
+                } catch(e) {
+                    console.log(e);
+                }
             }
             if (name === 'ExceptionEvent') {
             }
-            setReceiveMsg(JSON.stringify(notice));
+            
         }
         bus.addListener(GAME_MESSAGE, handler);
         return () => {
