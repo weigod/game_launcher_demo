@@ -7,7 +7,7 @@ var config = {
     "game_url":"https://g1c972e2182629c7-59ku7pqm.hyext.com/extResource/GameDemo.zip",
 	
     //如果填写了url,这个md5必须填写,这个是game包的md5
-    "game_md5":"f5fc57a45bdb293d2e298de50022bc2e",
+    "game_md5":"1b0d590cb980a84ffbcf2cae123c7391",
 	
     //game的可执行程序名称，填写了url,这个也要填
     "game_exe_name":"GameDemo.exe"
