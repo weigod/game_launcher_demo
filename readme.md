@@ -133,3 +133,6 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 
 status 表示对应key的状态结果(默认为true/false，部分key可能为其他值) |
 
+## 3 其他参考
+* [本示例关联的游戏接入流程](https://github.com/weigod/game_sdk_demo)
+* [弹幕玩法云启动全流程介绍](https://dev.huya.com/docs/miniapp/danmugame/intro/)
