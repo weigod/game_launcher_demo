@@ -14,7 +14,7 @@
 | :-----------: | :--------------------: | :----------------------------------------------------------: |
 |   game_name   |        游戏名称        |                           GameDemo                           |
 |   game_url    |   zip资源压缩包链接    | https://g1c972e2182629c7-59ku7pqm.hyext.com/extResource/GameDemo.zip |
-|   game_md5    |     zip资源包的md5     |               0c89b8b711fb35e269f2801f2664c291               |
+|   game_md5    |     zip资源包的md5     |               1b0d590cb980a84ffbcf2cae123c7391               |
 | game_exe_name | 资源包内可执行程序名称 |                         GameDemo.exe                         |
 
 ### 1.2 初始化配置及启动加载器
