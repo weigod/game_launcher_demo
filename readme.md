@@ -2,7 +2,7 @@
 > 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
 > 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
 > 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
-[业务开发官方推荐Demo在这里](https://github.com/huya-ext/hyext-examples/tree/master/examples/exe)  
+[官方推荐小程序Demo在这里](https://github.com/huya-ext/hyext-examples/tree/master/examples/exe)  
 
 ## 1 Demo相关配置及发布
 ### Demo展示
