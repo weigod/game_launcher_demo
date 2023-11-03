@@ -1,12 +1,15 @@
 # 小程序拉起外部游戏演示Demo
-
+> 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
+> 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
+> 这个Demo不能用于生产环境开发！！！仅用于展示接口说明！！！  
+[业务开发官方推荐Demo在这里](https://github.com/huya-ext/hyext-examples/tree/master/examples/exe)  
 
 ## 1 Demo相关配置及发布
 ### Demo展示
 ![示例图片](image/demo.jpg)
 ### 小程序版本配置勾选"自动发布OBS"即支持OBS环境
 ![示例图片](image/obs.jpg)
-### [示例小程序链接](https://appstore.huya.com/#/app/59ku7pqm)
+### [示例小程序添加体验](https://appstore.huya.com/#/app/59ku7pqm)
 
 ### 1.1 根目录config.json中添加关键配置
 
