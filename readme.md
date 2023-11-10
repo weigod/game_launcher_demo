@@ -100,7 +100,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | ----------------------------------- | -------- | ------------------------------------------------------------ |
 | Game进程中途Crash异常退出通知      | 20002    | "process exit unexpected"                        |
 | 启动gameEnv进程失败通知           | 20007    | "startup gameEnv failed"                          |
-| gameEnv发来的异常通知             | 20008    | "start game error"                                |
+| gameEnv发来的异常通知             | 20008    | "-1|-2|3|8"                                |
 | gameEnv进程中途Crash退出异常通知  | 20010    | "gameEnv exit unexpected"                          |
 | gameEnv进程中途被杀死退出异常通知 | 20011    | "gameEnv has been killed"                           |
 | 连接gameEnv进程IPC服务失败通知    | 20012    | "connect gameEnv failed"                           |
@@ -109,6 +109,13 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | gameEnv进程环境异常通知 | 20015    | "game env exception"                        |
 | gameEnv进程云游戏环境Alive通知 | 20016    | "keep alive cloud job failed"                        |
 | 云端game进程异常通知 | 20017    | "cloud game process exception"                        |
+
+特别说明：
+hostCode为20008时，hostMessage不同值说明如下：
+-1：启动本地game进程所在路径不存在(确定包完整性以及是否前端小程序触发下载该包到本地)
+-2：启动本地game进程失败(检查game进程是否缺少依赖文件或其他资源)
+3：启动云模式参数错误(检查小程序上传包版本与小程序版本是否匹配)
+8：云模式资源不足(可再尝试本地模式)
 
 * `OperateLayerEvent` 消息中 type 取值：
 
