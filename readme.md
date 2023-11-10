@@ -95,6 +95,15 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | AnchorStatusEvent | {typeName: string, state: string}        | typeName: 主播端状态类型名  state: 主播端typeName对应所处状态 | {"typeName":"Live","state":"true"} |
 
 具体各消息事件说明：
+* `GameRunRecommendEvent` 为game运行推荐模式事件，可在接收到该事件后，根据应答结果调用hyExt.exe.launchGame接口(对应processMode值)，消息中 recommendMode、forceMode取值：
+| 运行环境推荐事件                            | recommendMode | forceMode                                                  |
+| ----------------------------------- | -------- | ------------------------------------------------------------ |
+| 仅支持云模式启动加工，若采用本地模式启动加工会失败      | cloud    | true                        |
+| 推荐用云模式启动加工，但不强制，也可以采用本地模式启动加工           | cloud    | false                          |
+| 仅支持本地模式启动加工，若采用云端模式启动加工会失败             | local    | true                                |
+| 推荐用本地模式启动加工，但不强制，也可以采用云端模式启动加工             | local    | false                                |
+| 未知模式，业务侧可根据业务情况启动某种加工模式             | unknown    |     false                            |
+
 * `ExceptionEvent` 消息中 hostCode、hostMessage取值：
 
 | 消息内容                            | hostCode | hostMessage                                                  |
