@@ -87,7 +87,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 
 | name           | message 结构体                                 | 说明                                                         | 示例                                                         |
 | -------------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| GameRunRecommendEvent | {systemEnv: string, recommendMode: string, forceMode: boolean}        | systemEnv: 系统环境配置  recommendMode: 推荐启动加工模式 forceMode: 是否为强制模式 | {"systemEnv":"cpu:Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz|gpu:Intel(R) UHD Graphics 630 |NVIDIA GeForce RTX 2060|","recommendMode":"local","forceMode":false} |
+| GameRunRecommendEvent | {systemEnv: string, recommendMode: string, forceMode: boolean}        | systemEnv: 系统环境配置  recommendMode: 推荐启动加工模式 forceMode: 是否为强制模式 | {"systemEnv":"cpu:Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz\|gpu:Intel(R) UHD Graphics 630 \|NVIDIA GeForce RTX 2060\|","recommendMode":"local","forceMode":false} |
 | GameEnvEvent   | {msg: string , progress: number, res : number} | 环境初始化相关消息                                           | 见2.2示例                                                    |
 | ExceptionEvent | {hostCode: number, hostMessage: string}        | hostCode: 异常状态码  hostMessage: 异常消息， 表示环境准备异常或者游戏中途出现异常crash等 | {"hostCode":20013,"hostMessage":"game has been killed"} |
 | GameMsg        | 定义格式和内容                                 | 由业务侧小程序与game exe间自定义的通信消息                   |     {\"message\":\"GameExit\"}或"some flat message" |
