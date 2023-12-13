@@ -170,3 +170,6 @@ state 表示对应typeName的状态结果(默认为true/false，部分typeName�
 ## 3 其他参考
 * [本示例关联的游戏接入流程](https://github.com/weigod/game_sdk_demo)
 * [弹幕玩法云启动全流程介绍](https://dev.huya.com/docs/miniapp/danmugame/intro/)
+* [C++ Demo示例及开发流程说明](https://github.com/weigod/game_sdk_demo)
+* [Unity C# Demo示例](https://github.com/weigod/game_unity_demo)
+
