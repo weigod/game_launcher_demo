@@ -133,6 +133,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | gameEnv进程环境异常通知 | 20015    | "game env exception"                        |
 | gameEnv进程云游戏环境Alive通知 | 20016    | "keep alive cloud job failed"                        |
 | 云端game进程异常通知 | 20017    | "cloud game process exception"                        |
+| 本地Game进程窗口捕获失败异常通知 | 20018    | "local game capture failed"                        |
 | gameEnv用户环境异常通知 | 20030    | "user env unexpected"                        |
 
 特别说明：
