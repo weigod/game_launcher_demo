@@ -124,7 +124,7 @@ onGameMessage 会接收一些框架内部消息和自定义通信消息，具体
 | ----------------------------------- | -------- | ------------------------------------------------------------ |
 | Game进程中途Crash异常退出通知      | 20002    | "process exit unexpected"                        |
 | 启动gameEnv进程失败通知           | 20007    | "startup gameEnv failed"                          |
-| gameEnv发来的异常通知             | 20008    | "-1/-2/3/8"                                |
+| gameEnv发来的异常通知             | 20008    | "-1/-2/-3/3/8"                                |
 | gameEnv进程中途Crash退出异常通知  | 20010    | "gameEnv exit unexpected"                          |
 | gameEnv进程中途被杀死退出异常通知 | 20011    | "gameEnv has been killed"                           |
 | 连接gameEnv进程IPC服务失败通知    | 20012    | "connect gameEnv failed"                           |
